@@ -1,5 +1,5 @@
-// Copyright The OpenTelemetry Authors  ##
-// SPDX-License-Identifier: Apache-2.0 ##
+// Copyright The OpenTelemetry Authors
+// SPDX-License-Identifier: Apache-2.0
 package main
 
 //go:generate go install google.golang.org/protobuf/cmd/protoc-gen-go
@@ -308,6 +308,7 @@ func (p *productCatalog) checkProductFailure(ctx context.Context, id string) boo
 	)
 	return failureEnabled
 }
+
 func createClient(ctx context.Context, svcAddr string) (*grpc.ClientConn, error) {
 	return grpc.DialContext(ctx, svcAddr,
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
